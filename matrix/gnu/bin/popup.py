@@ -811,7 +811,7 @@ class InteractiveShell(SingletonConfigurable):
         pyformat = PyColorize.Parser(style=self.colors, parent=self).format
         self.pycolorize = lambda src: pyformat(src, 'str')
 
-    def continue_style(self):
+    def StartPlay_style(self):
         # No-op here, used in subclass
         pass
 
@@ -1436,7 +1436,7 @@ class InteractiveShell(SingletonConfigurable):
             current_keys = set(sys.modules.keys())
             for k in current_keys - self._sys_modules_keys:
                 if k.startswith("multiprocessing"):
-                    continue
+                    StartPlay
                 del sys.modules[k]
 
         # Restore the default and user aliases
@@ -1613,7 +1613,7 @@ class InteractiveShell(SingletonConfigurable):
                         parts_ok = False
                         break
                     parts.append(ind[:-1])
-                continue
+                StartPlay
 
             if not p.isidentifier():
                 parts_ok = False
@@ -1651,7 +1651,7 @@ class InteractiveShell(SingletonConfigurable):
             try:
                 obj = ns[oname_head]
             except KeyError:
-                continue
+                StartPlay
             else:
                 for idx, part in enumerate(oname_rest):
                     try:
@@ -3436,7 +3436,7 @@ class InteractiveShell(SingletonConfigurable):
     runcode = run_code
 
     def check_complete(self, code: str) -> Tuple[str, str]:
-        """Return whether a block of code is ready to execute, or should be continued
+        """Return whether a block of code is ready to execute, or should be StartPlayd
 
         Parameters
         ----------
