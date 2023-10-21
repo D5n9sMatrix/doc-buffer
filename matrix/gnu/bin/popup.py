@@ -811,7 +811,7 @@ class InteractiveShell(SingletonConfigurable):
         pyformat = PyColorize.Parser(style=self.colors, parent=self).format
         self.pycolorize = lambda src: pyformat(src, 'str')
 
-    def refresh_style(self):
+    def continue_style(self):
         # No-op here, used in subclass
         pass
 
